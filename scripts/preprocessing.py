@@ -54,3 +54,53 @@ def get_outlier_summary(data):
     print(f"From {data.shape[1]} selected numerical columns, there are {non_zero_count} columns with outlier values.")
 
     return outlier_summary
+
+def replace_missing_values(data):
+  """
+  Replaces missing values in a DataFrame with the mean for numeric columns and the mode for categorical columns.
+
+  Args:
+    data: The input DataFrame.
+
+  Returns:
+    The DataFrame with missing values replaced.
+  """
+
+  # Identify numeric and categorical columns
+  numeric_columns = data.select_dtypes(include='number').columns
+  categorical_columns = data.select_dtypes(include='object').columns
+
+  # Replace missing values in numeric columns with the mean
+  for column in numeric_columns:
+    column_mean = data[column].mean()
+    data[column] = data[column].fillna(column_mean)
+
+  # Replace missing values in categorical columns with the mode
+  for column in categorical_columns:
+    column_mode = data[column].mode().iloc[0]
+    data[column] = data[column].fillna(column_mode)
+
+  return data
+
+
+def remove_outliers_winsorization(data):
+    """
+    Removes outliers from specified columns of a DataFrame using winsorization.
+
+    Args:
+        data: The input DataFrame.
+        column_names (list): A list of column names to process.
+
+    Returns:
+        The DataFrame with outliers removed.
+    """
+    # data = xdr_data.select_dtypes(include='number')
+    for column_name in data.select_dtypes(include='number').columns:
+        q1 = data[column_name].quantile(0.25)
+        q3 = data[column_name].quantile(0.75)
+        iqr = q3 - q1
+        lower_bound = q1 - 1.5 * iqr
+        upper_bound = q3 + 1.5 * iqr
+        data[column_name] = data[column_name].clip(lower_bound, upper_bound)
+
+    return data
