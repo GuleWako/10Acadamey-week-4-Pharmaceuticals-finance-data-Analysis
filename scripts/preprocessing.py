@@ -1,8 +1,11 @@
 import pandas as pd
-import logging
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# import logging
 
+# logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+from scripts.logging import logger
 
 def find_missing_values(df):
     """
@@ -15,7 +18,7 @@ def find_missing_values(df):
         A summary of missing values, including the number of missing values per column.
     """
 
-    logging.info("Finding missing values in DataFrame...")
+    logger.info("Finding missing values in DataFrame...")
     null_counts = df.isnull().sum()
     missing_value = null_counts
     percent_of_missing_value = 100 * null_counts / len(df)
@@ -30,7 +33,7 @@ def find_missing_values(df):
     return missing_data_summary_table
 
 
-def get_outlier_summary(data):
+def get_outlier_summary(data,column_names):
     """
     Calculates outlier summary statistics for a DataFrame.
 
@@ -41,11 +44,11 @@ def get_outlier_summary(data):
         Outlier summary DataFrame.
     """
 
-    logging.info("Calculating outlier summary for numerical columns...")
+    logger.info("Calculating outlier summary for numerical columns...")
     outlier_summary = pd.DataFrame(columns=['Variable', 'Number of Outliers'])
-    data = data.select_dtypes(include='number')
+    # data = data.select_dtypes(include='number')
 
-    for column_name in data.columns:
+    for column_name in column_names:
         q1 = data[column_name].quantile(0.25)
         q3 = data[column_name].quantile(0.75)
         iqr = q3 - q1
@@ -74,26 +77,26 @@ def replace_missing_values(data):
         The DataFrame with missing values replaced.
     """
 
-    logging.info("Replacing missing values...")
+    logger.info("Replacing missing values...")
     numeric_columns = data.select_dtypes(include='number').columns
     categorical_columns = data.select_dtypes(include='object').columns
 
     # Replace missing values in numeric columns with the mean
     for column in numeric_columns:
         column_mean = data[column].mean()
-        logging.info(f"Replacing missing values in column '{column}' with mean: {column_mean}")
+        logger.info(f"Replacing missing values in column '{column}' with mean: {column_mean}")
         data[column] = data[column].fillna(column_mean)
 
     # Replace missing values in categorical columns with the mode
     for column in categorical_columns:
         column_mode = data[column].mode().iloc[0]
-        logging.info(f"Replacing missing values in column '{column}' with mode: {column_mode}")
+        logger.info(f"Replacing missing values in column '{column}' with mode: {column_mode}")
         data[column] = data[column].fillna(column_mode)
 
     return data
 
 
-def remove_outliers_winsorization(data):
+def remove_outliers_winsorization(data,column_names):
     """
     Removes outliers from specified columns of a DataFrame using winsorization.
 
@@ -105,14 +108,43 @@ def remove_outliers_winsorization(data):
         The DataFrame with outliers removed.
     """
 
-    logging.info("Removing outliers using winsorization...")
-    for column_name in data.select_dtypes(include='number').columns:
+    logger.info("Removing outliers using winsorization...")
+    for column_name in column_names:
         q1 = data[column_name].quantile(0.25)
         q3 = data[column_name].quantile(0.75)
         iqr = q3 - q1
         lower_bound = q1 - 1.5 * iqr
         upper_bound = q3 + 1.5 * iqr
-        logging.info(f"Winsorizing column '{column_name}' with lower bound: {lower_bound} and upper bound: {upper_bound}")
+        logger.info(f"Winsorizing column '{column_name}' with lower bound: {lower_bound} and upper bound: {upper_bound}")
         data[column_name] = data[column_name].clip(lower_bound, upper_bound)
 
     return data
+
+def boxPlotForDetectOutliers(train_data,column_names):
+    for column in column_names:
+        sns.boxplot(data=train_data[column])
+        plt.title(f"Box Plot of {column}")
+        plt.show()
+
+# def plotBoxPlotTestDataBeforeRemovingOutlier(test_data):
+#     sns.boxplot(data=test_data['Open'])
+#     plt.title("Box Plot of Open")
+#     plt.show()
+
+# def plotBoxPlotStoreDataBeforeRemovingOutlier(store_data,columns):
+#     for column in columns:
+#         sns.boxplot(data=store_data[column])
+#         plt.title(f"Box Plot of {column}")
+#         plt.show()
+
+# def plotBoxPlotTrainDataAfterRemovingOutlier(train_data):
+#     for column in train_data[]:
+#         sns.boxplot(data=train_data[column])
+#         plt.title(f"Box Plot of {column}")
+#         plt.show()
+
+# def plotBoxPlotStoreDataAfterRemovingOutlier(store_data):
+#     for column in store_data[['CompetitionDistance','CompetitionOpenSinceYear']]:
+#         sns.boxplot(data=store_data[column])
+#         plt.title(f"Box Plot of {column}")
+#         plt.show()
