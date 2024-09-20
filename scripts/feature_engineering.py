@@ -2,8 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from statsmodels.tsa.seasonal import seasonal_decompose
+from scripts.logging import logger
 
 def replace_char_state_holiday(char):
+    # logger.info(f"Replacing char '{char}' for state holiday.")
     if char == 'a':
         return 'Public Holiday'
     elif char == 'b':
@@ -13,6 +15,7 @@ def replace_char_state_holiday(char):
     else:
         return 'Non Holiday'
 def replace_char_assortment(char):
+    # logger.info(f"Replacing char '{char}' for assortment.")
     if char == 'a':
         return 'basic'
     elif char == 'b':
@@ -22,6 +25,7 @@ def replace_char_assortment(char):
     else:
         return char
 def create_date_features(df):
+    logger.info("Creating date features.")
     df['Date'] = pd.to_datetime(df['Date'])
     df['Year'] = df['Date'].dt.year
     df['Month'] = df['Date'].dt.month
@@ -31,6 +35,7 @@ def create_date_features(df):
     return df
 
 def distribution_promotions_in_both_datasets(merged_train_data_store,merged_test_data_store):
+    logger.info("Comparing Promo distribution between train and test datasets.")
     train_promo_dist = merged_train_data_store['Promo'].value_counts(normalize=True) * 100
     test_promo_dist = merged_test_data_store['Promo'].value_counts(normalize=True) * 100
 
@@ -53,12 +58,14 @@ def distribution_promotions_in_both_datasets(merged_train_data_store,merged_test
     plt.show()
 
 def label_holiday_periods(row, holiday_type):
+    # logger.info(f"Labeling holiday periods for {holiday_type}.")
     if row['StateHoliday'] == holiday_type:
         return 'During ' + holiday_type
     else:
         return 'Regular'
     
 def categorizeEachDayBasedonHolidayType(train_data):
+    logger.info("Categorizing each day based on holiday type.")
     for holiday in ['Public Holiday', 'Easter Holiday', 'Christmas']:
         # Apply the holiday categorization
         train_data[f'HolidayPeriod_{holiday}'] = train_data.apply(lambda row: label_holiday_periods(row, holiday), axis=1)
@@ -75,6 +82,7 @@ def categorizeEachDayBasedonHolidayType(train_data):
     return train_data
 
 def calculateAverageSalesDuringDifferentPeriods(train_data):
+    logger.info("Calculating average sales during different periods.")
     # Check if there are sales during holidays; if empty, no need to plot
     holiday_sales_behavior = pd.DataFrame()
     for holiday in ['Public Holiday', 'Easter Holiday', 'Christmas']:
@@ -101,6 +109,7 @@ def calculateAverageSalesDuringDifferentPeriods(train_data):
     return holiday_sales_behavior
 
 def plotEffectOfHolidayOnSales(holiday_sales_behavior):
+    logger.info("Plotting the effect of holidays on sales.")
     if not holiday_sales_behavior.empty:
         holiday_sales_behavior.plot(kind='bar', figsize=(14, 7), colormap='viridis')
         
@@ -117,6 +126,7 @@ def plotEffectOfHolidayOnSales(holiday_sales_behavior):
         print("No holiday sales data to plot.")
 
 def salesOverTime(merged_train_data_store):
+    logger.info("Plotting sales over time by different timeframes.")
     for column in ['D','W','M','Y']:
         over_time_sales = merged_train_data_store['Sales'].resample(column).sum()
         plt.figure(figsize=(15, 7))
@@ -134,6 +144,7 @@ def salesOverTime(merged_train_data_store):
         plt.show()
 
 def salesSeasonalDecompose(merged_train_data_store):
+    logger.info("Decomposing sales seasonality.")
     monthly_sales = merged_train_data_store['Sales'].resample('M').sum()
     result = seasonal_decompose(monthly_sales, model='additive')
     fig = result.plot()
@@ -143,6 +154,7 @@ def salesSeasonalDecompose(merged_train_data_store):
     plt.show()
 
 def averageSalesDayOfWeek(merged_train_data_store):
+    logger.info("Calculating average sales by day of the week.")
     merged_train_data_store['DayOfWeek'] = merged_train_data_store.index.dayofweek
     day_of_week_sales = merged_train_data_store.groupby('DayOfWeek')['Sales'].mean()
     day_of_week_sales.plot(kind='bar', figsize=(10, 6))
@@ -152,6 +164,7 @@ def averageSalesDayOfWeek(merged_train_data_store):
     plt.show()
 
 def salesWithOpenAndClose(monthly_open_store):
+    logger.info("Plotting monthly sales: Open vs Not Open.")
     monthly_open_store[[0, 1]].plot(figsize=(15, 7))
     plt.title('Monthly Average Sales: Open vs Not Open')
     plt.xlabel('Date')
@@ -160,6 +173,7 @@ def salesWithOpenAndClose(monthly_open_store):
     plt.show()
 
 def customerBehaviorStoreOpen(train_data):
+    logger.info("Analyzing customer behavior for stores that are open.")
     open_data = train_data[train_data['Open'] == 1]
     monthly_customers = open_data.groupby('Month')['Customers'].mean()
     plt.figure(figsize=(12, 6))
@@ -173,6 +187,7 @@ def customerBehaviorStoreOpen(train_data):
     plt.show()
 
 def customerBehaviorStoreNotOpen(train_data):
+    logger.info("Analyzing customer behavior for stores that are not open.")
     train_data['Date'] = pd.to_datetime(train_data['Date'])
 
 
@@ -193,6 +208,7 @@ def customerBehaviorStoreNotOpen(train_data):
     plt.show()
 
 def categorize_month(month):
+    # logger.info(f"Categorizing month {month}.")
     if month in [12, 1, 2]:
         return 'Winter'
     elif month in [3, 4, 5]:
@@ -203,6 +219,7 @@ def categorize_month(month):
         return 'Fall'
     
 def customerBehaviorStoreOpenSeasonal(train_data):
+    logger.info("Analyzing customer behavior by season for stores that are open.")
     train_data['Season'] = train_data['Month'].apply(categorize_month)
 
     # Filter to include only open stores
@@ -222,6 +239,7 @@ def customerBehaviorStoreOpenSeasonal(train_data):
     plt.show()
 
 def numberStateHolidayAndNotHoliday(merged_train_data_store):
+    logger.info("Plotting distribution of State Holidays.")
     plt.figure(figsize=(8, 6))
     merged_train_data_store['StateHoliday'].value_counts().plot(kind='bar')
     plt.title('Distribution of state Holiday')
@@ -230,6 +248,7 @@ def numberStateHolidayAndNotHoliday(merged_train_data_store):
     plt.show()
 
 def numberSchoolHolidayAndNotHoliday(merged_train_data_store):
+    logger.info("Plotting distribution of School Holidays.")
     plt.figure(figsize=(8, 6))
     merged_train_data_store['SchoolHoliday'].value_counts().plot(kind='bar')
     plt.title('Distribution of School Holiday')
@@ -239,6 +258,7 @@ def numberSchoolHolidayAndNotHoliday(merged_train_data_store):
     plt.show()
 
 def averageSalesOnStateHoliday(merged_train_data_store):
+    logger.info("Plotting average sales on State Holidays vs Non-Holidays.")
     holiday_effect = merged_train_data_store.groupby('StateHoliday')['Sales'].mean()
     holiday_effect.plot(kind='bar', figsize=(10, 6))
     plt.title('Average Sales: State Holiday vs Non-Holiday')
@@ -247,6 +267,7 @@ def averageSalesOnStateHoliday(merged_train_data_store):
     plt.show()
 
 def averageSalesOnSchoolHoliday(merged_train_data_store):
+    logger.info("Plotting average sales on School Holidays vs Non-Holidays.")
     holiday_effect = merged_train_data_store.groupby('SchoolHoliday')['Sales'].mean()
     holiday_effect.plot(kind='bar', figsize=(10, 6))
     plt.title('Average Sales: School Holiday vs Non-Holiday')
@@ -255,6 +276,7 @@ def averageSalesOnSchoolHoliday(merged_train_data_store):
     plt.show()
 
 def promotionEffectSales(monthly_promo_sales):
+    logger.info("Plotting effect of promotions on monthly average sales.")
     monthly_promo_sales[[0, 1]].plot(figsize=(15, 7))
     plt.title('Monthly Average Sales: Promo vs No Promo')
     plt.xlabel('Date')
@@ -263,6 +285,7 @@ def promotionEffectSales(monthly_promo_sales):
     plt.show()
 
 def storeTypePerformanceOverTime(merged_train_data_store):
+    logger.info("Analyzing store type performance over time.")
     store_type_sales = merged_train_data_store.groupby([merged_train_data_store.index.to_period('M'), 'StoreType'])['Sales'].mean().unstack()
     store_type_sales.plot(figsize=(15, 7))
     plt.title('Monthly Average Sales by Store Type')
@@ -273,6 +296,7 @@ def storeTypePerformanceOverTime(merged_train_data_store):
     return store_type_sales
 
 def storeTypeAndPromoOverTime(merged_store_type_prome):
+    logger.info("Plotting performance by store type and promotion over time.")
     merged_store_type_prome.plot(figsize=(15, 7))
     plt.title('Monthly Average Sales by Store Type and Promotion')
     plt.xlabel('Date')
@@ -284,6 +308,7 @@ def storeTypeAndPromoOverTime(merged_store_type_prome):
 
 
 def numberOfCustomerWithSales(merged_train_data_store):
+    logger.info("Plotting the relationship between number of customers and sales over time.")
     plt.figure(figsize=(12, 8))
     scatter = plt.scatter(merged_train_data_store['Customers'], merged_train_data_store['Sales'], c=merged_train_data_store.index, cmap='viridis')
     plt.colorbar(scatter, label='Date')
@@ -293,6 +318,7 @@ def numberOfCustomerWithSales(merged_train_data_store):
     plt.show()
 
 def corrSalesByDayOfWeekAndMonth(merged_train_data_store):
+    logger.info("Creating a heatmap for average sales by day of the week and month.")
     merged_train_data_store['DayOfWeek'] = merged_train_data_store.index.dayofweek
     merged_train_data_store['Month'] = merged_train_data_store.index.month
     sales_heatmap = merged_train_data_store.pivot_table(values='Sales', index='DayOfWeek', columns='Month', aggfunc='mean')
@@ -304,6 +330,7 @@ def corrSalesByDayOfWeekAndMonth(merged_train_data_store):
     plt.show()
 
 def dailySalesGrowthRate(merged_train_data_store):
+    logger.info("Plotting daily sales growth rate.")
     merged_train_data_store['SalesGrowthRate'] = merged_train_data_store['Sales'].pct_change()
     plt.figure(figsize=(15, 7))
     plt.plot(merged_train_data_store.index, merged_train_data_store['SalesGrowthRate'])
@@ -313,6 +340,7 @@ def dailySalesGrowthRate(merged_train_data_store):
     plt.show()
 
 def effectAssortmentTypeOnSales(monthly_effect_assortment_type):
+    logger.info("Analyzing the effect of assortment type on monthly average sales.")
     monthly_effect_assortment_type.plot(figsize=(15, 7))
     plt.title('Monthly Average Sales by Store Type')
     plt.xlabel('Date')
@@ -321,6 +349,7 @@ def effectAssortmentTypeOnSales(monthly_effect_assortment_type):
     plt.show()
 
 def effectCompetitionDistanceOnSales(merged_train_data_store):
+    logger.info("Analyzing the effect of competition distance on sales.")
     # Define the desired interval boundaries
     intervals = [0, 7585, 15171, 22757, 30343, 37929, 45515, 53101, 60687, 68273, 75860]
 
@@ -341,6 +370,7 @@ def effectCompetitionDistanceOnSales(merged_train_data_store):
 
 
 def storesOpenAllWeekdays(merged_train_data_store):
+    logger.info("Analyzing stores open on all weekdays.")
     merged_train_data_store['Date'] = pd.to_datetime(merged_train_data_store['Date'])
 
     # Filter for open stores
@@ -392,19 +422,34 @@ def storesOpenAllWeekdays(merged_train_data_store):
     plt.show()
 
 def storesOpenWeekdayOpenWeekends(merged_train_data_store):
+    logger.info('Starting storesOpenWeekdayOpenWeekends function')
+
+    # Step 2: Filter for stores that are open
     open_data = merged_train_data_store[merged_train_data_store['Open'] == 1]
+    logger.info(f'Filtered open stores: {len(open_data)} entries')
+
+    # Step 3: Filter for weekdays and find stores open all weekdays
     weekday_data = open_data[open_data['DayOfWeek'].isin([0, 1, 2, 3, 4])]  
     stores_open_weekdays = weekday_data.groupby('Store')['DayOfWeek'].nunique()
     stores_open_all_weekdays = stores_open_weekdays[stores_open_weekdays == 5].index
+    logger.info(f'Number of stores open all weekdays: {len(stores_open_all_weekdays)}')
 
+    # Step 4: Filter for weekend data and calculate sales
     weekend_data = merged_train_data_store[merged_train_data_store['DayOfWeek'].isin([5, 6])]  
     weekend_sales_open_all_weekdays = weekend_data[weekend_data['Store'].isin(stores_open_all_weekdays)].groupby('Store')['Sales'].mean()
     weekend_sales_not_open_all_weekdays = weekend_data[~weekend_data['Store'].isin(stores_open_all_weekdays)].groupby('Store')['Sales'].mean()
+    
+    # Step 5: Log the comparison between weekend sales
+    logger.info(f'Average weekend sales for stores open all weekdays: {weekend_sales_open_all_weekdays.mean()}')
+    logger.info(f'Average weekend sales for stores NOT open all weekdays: {weekend_sales_not_open_all_weekdays.mean()}')
+
+    # Step 6: Create a DataFrame for comparison
     comparison_df = pd.DataFrame({
         'Stores Open All Weekdays': [weekend_sales_open_all_weekdays.mean()],
         'Stores Not Open All Weekdays': [weekend_sales_not_open_all_weekdays.mean()]
     })
 
+    # Step 7: Plot the comparison
     plt.figure(figsize=(8, 5))
     sns.barplot(data=comparison_df, palette='Blues_d')
     plt.title('Comparison of Weekend Sales: Stores Open All Weekdays vs. Not Open All Weekdays', fontsize=14)
@@ -412,3 +457,6 @@ def storesOpenWeekdayOpenWeekends(merged_train_data_store):
     plt.xlabel('Store Type')
     plt.tight_layout()
     plt.show()
+
+    logger.info('Completed storesOpenWeekdayOpenWeekends function')
+

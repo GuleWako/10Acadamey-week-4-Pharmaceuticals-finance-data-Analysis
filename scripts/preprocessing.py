@@ -2,9 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# import logging
-
-# logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 from scripts.logging import logger
 
 def find_missing_values(df):
@@ -121,30 +118,8 @@ def remove_outliers_winsorization(data,column_names):
     return data
 
 def boxPlotForDetectOutliers(train_data,column_names):
+    logger.info("Creating box plots for outlier detection...")
     for column in column_names:
         sns.boxplot(data=train_data[column])
         plt.title(f"Box Plot of {column}")
         plt.show()
-
-# def plotBoxPlotTestDataBeforeRemovingOutlier(test_data):
-#     sns.boxplot(data=test_data['Open'])
-#     plt.title("Box Plot of Open")
-#     plt.show()
-
-# def plotBoxPlotStoreDataBeforeRemovingOutlier(store_data,columns):
-#     for column in columns:
-#         sns.boxplot(data=store_data[column])
-#         plt.title(f"Box Plot of {column}")
-#         plt.show()
-
-# def plotBoxPlotTrainDataAfterRemovingOutlier(train_data):
-#     for column in train_data[]:
-#         sns.boxplot(data=train_data[column])
-#         plt.title(f"Box Plot of {column}")
-#         plt.show()
-
-# def plotBoxPlotStoreDataAfterRemovingOutlier(store_data):
-#     for column in store_data[['CompetitionDistance','CompetitionOpenSinceYear']]:
-#         sns.boxplot(data=store_data[column])
-#         plt.title(f"Box Plot of {column}")
-#         plt.show()
