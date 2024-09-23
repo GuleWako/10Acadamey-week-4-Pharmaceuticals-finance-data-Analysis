@@ -542,3 +542,549 @@
 2024-09-23 09:35:00,343 - INFO - Completed storesOpenWeekdayOpenWeekends function
 2024-09-23 09:35:00,669 - INFO - Creating date features.
 2024-09-23 09:35:01,302 - INFO - Creating date features.
+2024-09-23 10:05:39,866 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:05:39,964 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:05:39,982 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:05:40,015 - INFO - Replacing missing values...
+2024-09-23 10:05:40,018 - INFO - Replacing missing values in column 'Id' with mean: 41088
+2024-09-23 10:05:40,020 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 10:05:40,022 - INFO - Replacing missing values in column 'DayOfWeek' with mean: 7
+2024-09-23 10:05:40,023 - INFO - Replacing missing values in column 'Open' with mean: 1.0
+2024-09-23 10:05:40,025 - INFO - Replacing missing values in column 'Promo' with mean: 1
+2024-09-23 10:05:40,027 - INFO - Replacing missing values in column 'SchoolHoliday' with mean: 1
+2024-09-23 10:05:40,032 - INFO - Replacing missing values in column 'Date' with mode: 2015-08-01
+2024-09-23 10:05:40,037 - INFO - Replacing missing values in column 'StateHoliday' with mode: 0
+2024-09-23 10:05:40,049 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:05:40,066 - INFO - Replacing missing values...
+2024-09-23 10:05:40,069 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 10:05:40,070 - INFO - Replacing missing values in column 'CompetitionDistance' with mean: 75860.0
+2024-09-23 10:05:40,072 - INFO - Replacing missing values in column 'CompetitionOpenSinceMonth' with mean: 12.0
+2024-09-23 10:05:40,074 - INFO - Replacing missing values in column 'CompetitionOpenSinceYear' with mean: 2015.0
+2024-09-23 10:05:40,076 - INFO - Replacing missing values in column 'Promo2' with mean: 1
+2024-09-23 10:05:40,079 - INFO - Replacing missing values in column 'Promo2SinceWeek' with mean: 50.0
+2024-09-23 10:05:40,081 - INFO - Replacing missing values in column 'Promo2SinceYear' with mean: 2015.0
+2024-09-23 10:05:40,084 - INFO - Replacing missing values in column 'StoreType' with mode: a
+2024-09-23 10:05:40,085 - INFO - Replacing missing values in column 'Assortment' with mode: a
+2024-09-23 10:05:40,087 - INFO - Replacing missing values in column 'PromoInterval' with mode: Jan,Apr,Jul,Oct
+2024-09-23 10:05:40,094 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:05:40,150 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:05:40,235 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:05:43,194 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:05:43,215 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:05:43,238 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:05:43,520 - INFO - Removing outliers using winsorization...
+2024-09-23 10:05:43,546 - INFO - Winsorizing column 'Sales' with lower bound: -2466.5 and upper bound: 14049.5
+2024-09-23 10:05:43,603 - INFO - Winsorizing column 'Customers' with lower bound: -243.0 and upper bound: 1485.0
+2024-09-23 10:05:43,628 - INFO - Removing outliers using winsorization...
+2024-09-23 10:05:43,637 - INFO - Winsorizing column 'CompetitionDistance' with lower bound: -8557.5 and upper bound: 16182.5
+2024-09-23 10:05:43,644 - INFO - Winsorizing column 'CompetitionOpenSinceYear' with lower bound: 1997.5 and upper bound: 2025.5
+2024-09-23 10:05:43,656 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:05:43,750 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:05:43,772 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:05:43,791 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:05:46,737 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:05:48,085 - INFO - Creating date features.
+2024-09-23 10:05:48,801 - INFO - Comparing Promo distribution between train and test datasets.
+2024-09-23 10:05:48,825 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:05:48,830 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:05:48,856 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:05:48,860 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:05:48,981 - INFO - Categorizing each day based on holiday type.
+2024-09-23 10:06:07,568 - INFO - Calculating average sales during different periods.
+2024-09-23 10:06:07,743 - INFO - Plotting the effect of holidays on sales.
+2024-09-23 10:06:08,083 - INFO - Plotting sales over time by different timeframes.
+2024-09-23 10:06:09,181 - INFO - Decomposing sales seasonality.
+2024-09-23 10:06:10,226 - INFO - Calculating average sales by day of the week.
+2024-09-23 10:06:10,579 - INFO - Plotting monthly sales: Open vs Not Open.
+2024-09-23 10:06:10,805 - INFO - Analyzing customer behavior for stores that are open.
+2024-09-23 10:06:11,171 - INFO - Analyzing customer behavior for stores that are not open.
+2024-09-23 10:06:11,420 - INFO - Analyzing customer behavior by season for stores that are open.
+2024-09-23 10:06:11,958 - INFO - Plotting distribution of State Holidays.
+2024-09-23 10:06:12,121 - INFO - Plotting distribution of School Holidays.
+2024-09-23 10:06:12,246 - INFO - Plotting average sales on State Holidays vs Non-Holidays.
+2024-09-23 10:06:12,425 - INFO - Plotting average sales on School Holidays vs Non-Holidays.
+2024-09-23 10:06:12,719 - INFO - Plotting effect of promotions on monthly average sales.
+2024-09-23 10:06:12,991 - INFO - Analyzing store type performance over time.
+2024-09-23 10:06:13,347 - INFO - Plotting performance by store type and promotion over time.
+2024-09-23 10:06:13,618 - INFO - Plotting the relationship between number of customers and sales over time.
+2024-09-23 10:06:27,819 - INFO - Creating a heatmap for average sales by day of the week and month.
+2024-09-23 10:06:28,331 - INFO - Plotting daily sales growth rate.
+2024-09-23 10:06:28,810 - INFO - Analyzing the effect of assortment type on monthly average sales.
+2024-09-23 10:06:29,039 - INFO - Analyzing the effect of competition distance on sales.
+2024-09-23 10:06:29,285 - INFO - Analyzing stores open on all weekdays.
+2024-09-23 10:06:29,951 - INFO - Starting storesOpenWeekdayOpenWeekends function
+2024-09-23 10:06:30,182 - INFO - Filtered open stores: 844392 entries
+2024-09-23 10:06:30,383 - INFO - Number of stores open all weekdays: 1115
+2024-09-23 10:06:30,550 - INFO - Average weekend sales for stores open all weekdays: 2994.451143510152
+2024-09-23 10:06:30,551 - INFO - Average weekend sales for stores NOT open all weekdays: nan
+2024-09-23 10:06:30,684 - INFO - Completed storesOpenWeekdayOpenWeekends function
+2024-09-23 10:06:30,936 - INFO - Creating date features.
+2024-09-23 10:06:31,431 - INFO - Creating date features.
+2024-09-23 10:10:33,188 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:10:33,318 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:10:33,342 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:10:33,384 - INFO - Replacing missing values...
+2024-09-23 10:10:33,389 - INFO - Replacing missing values in column 'Id' with mean: 41088
+2024-09-23 10:10:33,393 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 10:10:33,397 - INFO - Replacing missing values in column 'DayOfWeek' with mean: 7
+2024-09-23 10:10:33,400 - INFO - Replacing missing values in column 'Open' with mean: 1.0
+2024-09-23 10:10:33,403 - INFO - Replacing missing values in column 'Promo' with mean: 1
+2024-09-23 10:10:33,405 - INFO - Replacing missing values in column 'SchoolHoliday' with mean: 1
+2024-09-23 10:10:33,409 - INFO - Replacing missing values in column 'Date' with mode: 2015-08-01
+2024-09-23 10:10:33,417 - INFO - Replacing missing values in column 'StateHoliday' with mode: 0
+2024-09-23 10:10:33,429 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:10:33,456 - INFO - Replacing missing values...
+2024-09-23 10:10:33,459 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 10:10:33,462 - INFO - Replacing missing values in column 'CompetitionDistance' with mean: 75860.0
+2024-09-23 10:10:33,466 - INFO - Replacing missing values in column 'CompetitionOpenSinceMonth' with mean: 12.0
+2024-09-23 10:10:33,469 - INFO - Replacing missing values in column 'CompetitionOpenSinceYear' with mean: 2015.0
+2024-09-23 10:10:33,471 - INFO - Replacing missing values in column 'Promo2' with mean: 1
+2024-09-23 10:10:33,473 - INFO - Replacing missing values in column 'Promo2SinceWeek' with mean: 50.0
+2024-09-23 10:10:33,475 - INFO - Replacing missing values in column 'Promo2SinceYear' with mean: 2015.0
+2024-09-23 10:10:33,477 - INFO - Replacing missing values in column 'StoreType' with mode: a
+2024-09-23 10:10:33,481 - INFO - Replacing missing values in column 'Assortment' with mode: a
+2024-09-23 10:10:33,484 - INFO - Replacing missing values in column 'PromoInterval' with mode: Jan,Apr,Jul,Oct
+2024-09-23 10:10:33,493 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:10:33,566 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:10:33,668 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:10:36,912 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:10:36,932 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:10:36,956 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:10:37,224 - INFO - Removing outliers using winsorization...
+2024-09-23 10:10:37,248 - INFO - Winsorizing column 'Sales' with lower bound: -2466.5 and upper bound: 14049.5
+2024-09-23 10:10:37,305 - INFO - Winsorizing column 'Customers' with lower bound: -243.0 and upper bound: 1485.0
+2024-09-23 10:10:37,323 - INFO - Removing outliers using winsorization...
+2024-09-23 10:10:37,327 - INFO - Winsorizing column 'CompetitionDistance' with lower bound: -8557.5 and upper bound: 16182.5
+2024-09-23 10:10:37,332 - INFO - Winsorizing column 'CompetitionOpenSinceYear' with lower bound: 1997.5 and upper bound: 2025.5
+2024-09-23 10:10:37,342 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:10:37,424 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:10:37,448 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:10:37,470 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:10:40,385 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:10:41,742 - INFO - Creating date features.
+2024-09-23 10:10:42,499 - INFO - Comparing Promo distribution between train and test datasets.
+2024-09-23 10:10:42,524 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:10:42,530 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:10:42,556 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:10:42,562 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:10:42,701 - INFO - Categorizing each day based on holiday type.
+2024-09-23 10:11:01,783 - INFO - Calculating average sales during different periods.
+2024-09-23 10:11:01,986 - INFO - Plotting the effect of holidays on sales.
+2024-09-23 10:11:02,312 - INFO - Plotting sales over time by different timeframes.
+2024-09-23 10:11:03,514 - INFO - Decomposing sales seasonality.
+2024-09-23 10:11:04,644 - INFO - Calculating average sales by day of the week.
+2024-09-23 10:11:05,027 - INFO - Plotting monthly sales: Open vs Not Open.
+2024-09-23 10:11:05,259 - INFO - Analyzing customer behavior for stores that are open.
+2024-09-23 10:11:05,652 - INFO - Analyzing customer behavior for stores that are not open.
+2024-09-23 10:11:05,990 - INFO - Analyzing customer behavior by season for stores that are open.
+2024-09-23 10:11:06,680 - INFO - Plotting distribution of State Holidays.
+2024-09-23 10:11:06,911 - INFO - Plotting distribution of School Holidays.
+2024-09-23 10:11:07,079 - INFO - Plotting average sales on State Holidays vs Non-Holidays.
+2024-09-23 10:11:07,266 - INFO - Plotting average sales on School Holidays vs Non-Holidays.
+2024-09-23 10:11:07,551 - INFO - Plotting effect of promotions on monthly average sales.
+2024-09-23 10:11:07,828 - INFO - Analyzing store type performance over time.
+2024-09-23 10:11:08,228 - INFO - Plotting performance by store type and promotion over time.
+2024-09-23 10:11:08,590 - INFO - Plotting the relationship between number of customers and sales over time.
+2024-09-23 10:11:22,624 - INFO - Creating a heatmap for average sales by day of the week and month.
+2024-09-23 10:11:23,059 - INFO - Plotting daily sales growth rate.
+2024-09-23 10:11:23,484 - INFO - Analyzing the effect of assortment type on monthly average sales.
+2024-09-23 10:11:23,779 - INFO - Analyzing the effect of competition distance on sales.
+2024-09-23 10:11:24,055 - INFO - Analyzing stores open on all weekdays.
+2024-09-23 10:11:24,732 - INFO - Starting storesOpenWeekdayOpenWeekends function
+2024-09-23 10:11:24,923 - INFO - Filtered open stores: 844392 entries
+2024-09-23 10:11:25,109 - INFO - Number of stores open all weekdays: 1115
+2024-09-23 10:11:25,280 - INFO - Average weekend sales for stores open all weekdays: 2994.451143510152
+2024-09-23 10:11:25,281 - INFO - Average weekend sales for stores NOT open all weekdays: nan
+2024-09-23 10:11:25,418 - INFO - Completed storesOpenWeekdayOpenWeekends function
+2024-09-23 10:11:25,666 - INFO - Creating date features.
+2024-09-23 10:11:26,172 - INFO - Creating date features.
+2024-09-23 10:19:27,634 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:19:27,739 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:19:27,757 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:19:27,898 - INFO - Replacing missing values...
+2024-09-23 10:19:27,901 - INFO - Replacing missing values in column 'Id' with mean: 41088
+2024-09-23 10:19:27,903 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 10:19:27,905 - INFO - Replacing missing values in column 'DayOfWeek' with mean: 7
+2024-09-23 10:19:27,910 - INFO - Replacing missing values in column 'Open' with mean: 1.0
+2024-09-23 10:19:27,913 - INFO - Replacing missing values in column 'Promo' with mean: 1
+2024-09-23 10:19:27,916 - INFO - Replacing missing values in column 'SchoolHoliday' with mean: 1
+2024-09-23 10:19:27,921 - INFO - Replacing missing values in column 'Date' with mode: 2015-08-01
+2024-09-23 10:19:27,928 - INFO - Replacing missing values in column 'StateHoliday' with mode: 0
+2024-09-23 10:19:27,938 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:19:27,956 - INFO - Replacing missing values...
+2024-09-23 10:19:27,959 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 10:19:27,961 - INFO - Replacing missing values in column 'CompetitionDistance' with mean: 75860.0
+2024-09-23 10:19:27,964 - INFO - Replacing missing values in column 'CompetitionOpenSinceMonth' with mean: 12.0
+2024-09-23 10:19:27,966 - INFO - Replacing missing values in column 'CompetitionOpenSinceYear' with mean: 2015.0
+2024-09-23 10:19:27,968 - INFO - Replacing missing values in column 'Promo2' with mean: 1
+2024-09-23 10:19:27,969 - INFO - Replacing missing values in column 'Promo2SinceWeek' with mean: 50.0
+2024-09-23 10:19:27,971 - INFO - Replacing missing values in column 'Promo2SinceYear' with mean: 2015.0
+2024-09-23 10:19:27,972 - INFO - Replacing missing values in column 'StoreType' with mode: a
+2024-09-23 10:19:27,974 - INFO - Replacing missing values in column 'Assortment' with mode: a
+2024-09-23 10:19:27,976 - INFO - Replacing missing values in column 'PromoInterval' with mode: Jan,Apr,Jul,Oct
+2024-09-23 10:19:27,984 - INFO - Finding missing values in DataFrame...
+2024-09-23 10:19:28,045 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:19:28,239 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:19:31,729 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:19:31,750 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:19:31,776 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:19:32,093 - INFO - Removing outliers using winsorization...
+2024-09-23 10:19:32,124 - INFO - Winsorizing column 'Sales' with lower bound: -2466.5 and upper bound: 14049.5
+2024-09-23 10:19:32,181 - INFO - Winsorizing column 'Customers' with lower bound: -243.0 and upper bound: 1485.0
+2024-09-23 10:19:32,200 - INFO - Removing outliers using winsorization...
+2024-09-23 10:19:32,204 - INFO - Winsorizing column 'CompetitionDistance' with lower bound: -8557.5 and upper bound: 16182.5
+2024-09-23 10:19:32,210 - INFO - Winsorizing column 'CompetitionOpenSinceYear' with lower bound: 1997.5 and upper bound: 2025.5
+2024-09-23 10:19:32,321 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:19:32,399 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:19:32,423 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 10:19:32,441 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:19:35,411 - INFO - Creating box plots for outlier detection...
+2024-09-23 10:19:37,144 - INFO - Creating date features.
+2024-09-23 10:19:37,939 - INFO - Comparing Promo distribution between train and test datasets.
+2024-09-23 10:19:37,962 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:19:37,970 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:19:37,995 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:19:38,002 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 10:19:38,124 - INFO - Categorizing each day based on holiday type.
+2024-09-23 10:19:59,386 - INFO - Calculating average sales during different periods.
+2024-09-23 10:19:59,589 - INFO - Plotting the effect of holidays on sales.
+2024-09-23 10:19:59,950 - INFO - Plotting sales over time by different timeframes.
+2024-09-23 10:20:01,142 - INFO - Decomposing sales seasonality.
+2024-09-23 10:20:02,492 - INFO - Calculating average sales by day of the week.
+2024-09-23 10:20:03,015 - INFO - Plotting monthly sales: Open vs Not Open.
+2024-09-23 10:20:03,209 - INFO - Analyzing customer behavior for stores that are open.
+2024-09-23 10:20:03,634 - INFO - Analyzing customer behavior for stores that are not open.
+2024-09-23 10:20:03,879 - INFO - Analyzing customer behavior by season for stores that are open.
+2024-09-23 10:20:04,459 - INFO - Plotting distribution of State Holidays.
+2024-09-23 10:20:04,652 - INFO - Plotting distribution of School Holidays.
+2024-09-23 10:20:04,782 - INFO - Plotting average sales on State Holidays vs Non-Holidays.
+2024-09-23 10:20:04,968 - INFO - Plotting average sales on School Holidays vs Non-Holidays.
+2024-09-23 10:20:05,253 - INFO - Plotting effect of promotions on monthly average sales.
+2024-09-23 10:20:05,505 - INFO - Analyzing store type performance over time.
+2024-09-23 10:20:05,907 - INFO - Plotting performance by store type and promotion over time.
+2024-09-23 10:20:06,195 - INFO - Plotting the relationship between number of customers and sales over time.
+2024-09-23 10:20:19,986 - INFO - Creating a heatmap for average sales by day of the week and month.
+2024-09-23 10:20:20,403 - INFO - Plotting daily sales growth rate.
+2024-09-23 10:20:20,832 - INFO - Analyzing the effect of assortment type on monthly average sales.
+2024-09-23 10:20:21,109 - INFO - Analyzing the effect of competition distance on sales.
+2024-09-23 10:20:21,344 - INFO - Analyzing stores open on all weekdays.
+2024-09-23 10:20:21,988 - INFO - Starting storesOpenWeekdayOpenWeekends function
+2024-09-23 10:20:22,184 - INFO - Filtered open stores: 844392 entries
+2024-09-23 10:20:22,371 - INFO - Number of stores open all weekdays: 1115
+2024-09-23 10:20:22,541 - INFO - Average weekend sales for stores open all weekdays: 2994.451143510152
+2024-09-23 10:20:22,543 - INFO - Average weekend sales for stores NOT open all weekdays: nan
+2024-09-23 10:20:22,676 - INFO - Completed storesOpenWeekdayOpenWeekends function
+2024-09-23 10:20:23,006 - INFO - Creating date features.
+2024-09-23 10:20:23,497 - INFO - Creating date features.
+2024-09-23 11:28:30,159 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:28:30,258 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:28:30,277 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:28:30,312 - INFO - Replacing missing values...
+2024-09-23 11:28:30,315 - INFO - Replacing missing values in column 'Id' with mean: 41088
+2024-09-23 11:28:30,317 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 11:28:30,318 - INFO - Replacing missing values in column 'DayOfWeek' with mean: 7
+2024-09-23 11:28:30,320 - INFO - Replacing missing values in column 'Open' with mean: 1.0
+2024-09-23 11:28:30,321 - INFO - Replacing missing values in column 'Promo' with mean: 1
+2024-09-23 11:28:30,323 - INFO - Replacing missing values in column 'SchoolHoliday' with mean: 1
+2024-09-23 11:28:30,327 - INFO - Replacing missing values in column 'Date' with mode: 2015-08-01
+2024-09-23 11:28:30,332 - INFO - Replacing missing values in column 'StateHoliday' with mode: 0
+2024-09-23 11:28:30,342 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:28:30,361 - INFO - Replacing missing values...
+2024-09-23 11:28:30,363 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 11:28:30,365 - INFO - Replacing missing values in column 'CompetitionDistance' with mean: 75860.0
+2024-09-23 11:28:30,366 - INFO - Replacing missing values in column 'CompetitionOpenSinceMonth' with mean: 12.0
+2024-09-23 11:28:30,368 - INFO - Replacing missing values in column 'CompetitionOpenSinceYear' with mean: 2015.0
+2024-09-23 11:28:30,370 - INFO - Replacing missing values in column 'Promo2' with mean: 1
+2024-09-23 11:28:30,371 - INFO - Replacing missing values in column 'Promo2SinceWeek' with mean: 50.0
+2024-09-23 11:28:30,373 - INFO - Replacing missing values in column 'Promo2SinceYear' with mean: 2015.0
+2024-09-23 11:28:30,374 - INFO - Replacing missing values in column 'StoreType' with mode: a
+2024-09-23 11:28:30,376 - INFO - Replacing missing values in column 'Assortment' with mode: a
+2024-09-23 11:28:30,378 - INFO - Replacing missing values in column 'PromoInterval' with mode: Jan,Apr,Jul,Oct
+2024-09-23 11:28:30,385 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:28:30,444 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:28:30,529 - INFO - Creating box plots for outlier detection...
+2024-09-23 11:28:33,478 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:28:33,500 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:28:33,524 - INFO - Creating box plots for outlier detection...
+2024-09-23 11:28:33,813 - INFO - Removing outliers using winsorization...
+2024-09-23 11:28:33,836 - INFO - Winsorizing column 'Sales' with lower bound: -2466.5 and upper bound: 14049.5
+2024-09-23 11:28:33,892 - INFO - Winsorizing column 'Customers' with lower bound: -243.0 and upper bound: 1485.0
+2024-09-23 11:28:33,909 - INFO - Removing outliers using winsorization...
+2024-09-23 11:28:33,912 - INFO - Winsorizing column 'CompetitionDistance' with lower bound: -8557.5 and upper bound: 16182.5
+2024-09-23 11:28:33,915 - INFO - Winsorizing column 'CompetitionOpenSinceYear' with lower bound: 1997.5 and upper bound: 2025.5
+2024-09-23 11:28:33,925 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:28:34,001 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:28:34,023 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:28:34,043 - INFO - Creating box plots for outlier detection...
+2024-09-23 11:28:36,956 - INFO - Creating box plots for outlier detection...
+2024-09-23 11:28:38,325 - INFO - Creating date features.
+2024-09-23 11:28:39,052 - INFO - Comparing Promo distribution between train and test datasets.
+2024-09-23 11:28:39,077 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 11:28:39,084 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 11:28:39,110 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 11:28:39,118 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 11:28:39,289 - INFO - Categorizing each day based on holiday type.
+2024-09-23 11:29:01,436 - INFO - Calculating average sales during different periods.
+2024-09-23 11:29:04,370 - INFO - Plotting the effect of holidays on sales.
+2024-09-23 11:29:13,981 - INFO - Plotting sales over time by different timeframes.
+2024-09-23 11:29:15,222 - INFO - Decomposing sales seasonality.
+2024-09-23 11:29:16,390 - INFO - Calculating average sales by day of the week.
+2024-09-23 11:29:17,746 - INFO - Plotting monthly sales: Open vs Not Open.
+2024-09-23 11:29:18,124 - INFO - Analyzing customer behavior for stores that are open.
+2024-09-23 11:29:18,675 - INFO - Analyzing customer behavior for stores that are not open.
+2024-09-23 11:29:18,964 - INFO - Analyzing customer behavior by season for stores that are open.
+2024-09-23 11:29:19,569 - INFO - Plotting distribution of State Holidays.
+2024-09-23 11:29:19,763 - INFO - Plotting distribution of School Holidays.
+2024-09-23 11:29:20,057 - INFO - Plotting average sales on State Holidays vs Non-Holidays.
+2024-09-23 11:29:20,276 - INFO - Plotting average sales on School Holidays vs Non-Holidays.
+2024-09-23 11:29:20,704 - INFO - Plotting effect of promotions on monthly average sales.
+2024-09-23 11:29:21,033 - INFO - Analyzing store type performance over time.
+2024-09-23 11:29:21,746 - INFO - Plotting performance by store type and promotion over time.
+2024-09-23 11:29:22,108 - INFO - Plotting the relationship between number of customers and sales over time.
+2024-09-23 11:29:36,826 - INFO - Creating a heatmap for average sales by day of the week and month.
+2024-09-23 11:29:37,237 - INFO - Plotting daily sales growth rate.
+2024-09-23 11:29:37,692 - INFO - Analyzing the effect of assortment type on monthly average sales.
+2024-09-23 11:29:37,935 - INFO - Analyzing the effect of competition distance on sales.
+2024-09-23 11:29:38,316 - INFO - Analyzing stores open on all weekdays.
+2024-09-23 11:29:38,955 - INFO - Starting storesOpenWeekdayOpenWeekends function
+2024-09-23 11:29:39,157 - INFO - Filtered open stores: 844392 entries
+2024-09-23 11:29:39,353 - INFO - Number of stores open all weekdays: 1115
+2024-09-23 11:29:39,525 - INFO - Average weekend sales for stores open all weekdays: 2994.451143510152
+2024-09-23 11:29:39,526 - INFO - Average weekend sales for stores NOT open all weekdays: nan
+2024-09-23 11:29:39,668 - INFO - Completed storesOpenWeekdayOpenWeekends function
+2024-09-23 11:29:40,163 - INFO - Creating date features.
+2024-09-23 11:29:40,804 - INFO - Creating date features.
+2024-09-23 11:42:11,875 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:42:11,973 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:42:11,994 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:42:12,025 - INFO - Replacing missing values...
+2024-09-23 11:42:12,028 - INFO - Replacing missing values in column 'Id' with mean: 41088
+2024-09-23 11:42:12,029 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 11:42:12,031 - INFO - Replacing missing values in column 'DayOfWeek' with mean: 7
+2024-09-23 11:42:12,032 - INFO - Replacing missing values in column 'Open' with mean: 1.0
+2024-09-23 11:42:12,034 - INFO - Replacing missing values in column 'Promo' with mean: 1
+2024-09-23 11:42:12,036 - INFO - Replacing missing values in column 'SchoolHoliday' with mean: 1
+2024-09-23 11:42:12,040 - INFO - Replacing missing values in column 'Date' with mode: 2015-08-01
+2024-09-23 11:42:12,046 - INFO - Replacing missing values in column 'StateHoliday' with mode: 0
+2024-09-23 11:42:12,055 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:42:12,073 - INFO - Replacing missing values...
+2024-09-23 11:42:12,075 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 11:42:12,077 - INFO - Replacing missing values in column 'CompetitionDistance' with mean: 75860.0
+2024-09-23 11:42:12,079 - INFO - Replacing missing values in column 'CompetitionOpenSinceMonth' with mean: 12.0
+2024-09-23 11:42:12,080 - INFO - Replacing missing values in column 'CompetitionOpenSinceYear' with mean: 2015.0
+2024-09-23 11:42:12,083 - INFO - Replacing missing values in column 'Promo2' with mean: 1
+2024-09-23 11:42:12,084 - INFO - Replacing missing values in column 'Promo2SinceWeek' with mean: 50.0
+2024-09-23 11:42:12,086 - INFO - Replacing missing values in column 'Promo2SinceYear' with mean: 2015.0
+2024-09-23 11:42:12,087 - INFO - Replacing missing values in column 'StoreType' with mode: a
+2024-09-23 11:42:12,089 - INFO - Replacing missing values in column 'Assortment' with mode: a
+2024-09-23 11:42:12,091 - INFO - Replacing missing values in column 'PromoInterval' with mode: Jan,Apr,Jul,Oct
+2024-09-23 11:42:12,098 - INFO - Finding missing values in DataFrame...
+2024-09-23 11:42:12,154 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:42:12,229 - INFO - Creating box plots for outlier detection...
+2024-09-23 11:42:15,182 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:42:15,204 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:42:15,228 - INFO - Creating box plots for outlier detection...
+2024-09-23 11:42:15,528 - INFO - Removing outliers using winsorization...
+2024-09-23 11:42:15,553 - INFO - Winsorizing column 'Sales' with lower bound: -2466.5 and upper bound: 14049.5
+2024-09-23 11:42:15,607 - INFO - Winsorizing column 'Customers' with lower bound: -243.0 and upper bound: 1485.0
+2024-09-23 11:42:15,625 - INFO - Removing outliers using winsorization...
+2024-09-23 11:42:15,629 - INFO - Winsorizing column 'CompetitionDistance' with lower bound: -8557.5 and upper bound: 16182.5
+2024-09-23 11:42:15,633 - INFO - Winsorizing column 'CompetitionOpenSinceYear' with lower bound: 1997.5 and upper bound: 2025.5
+2024-09-23 11:42:15,643 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:42:15,719 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:42:15,741 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 11:42:15,760 - INFO - Creating box plots for outlier detection...
+2024-09-23 11:42:18,636 - INFO - Creating box plots for outlier detection...
+2024-09-23 11:42:19,979 - INFO - Creating date features.
+2024-09-23 11:42:20,712 - INFO - Comparing Promo distribution between train and test datasets.
+2024-09-23 11:42:20,737 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 11:42:20,745 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 11:42:20,781 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 11:42:20,789 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 11:42:20,964 - INFO - Categorizing each day based on holiday type.
+2024-09-23 11:42:40,366 - INFO - Calculating average sales during different periods.
+2024-09-23 11:42:40,551 - INFO - Plotting the effect of holidays on sales.
+2024-09-23 11:42:40,895 - INFO - Plotting sales over time by different timeframes.
+2024-09-23 11:42:42,089 - INFO - Decomposing sales seasonality.
+2024-09-23 11:42:43,242 - INFO - Calculating average sales by day of the week.
+2024-09-23 11:42:43,611 - INFO - Plotting monthly sales: Open vs Not Open.
+2024-09-23 11:42:43,811 - INFO - Analyzing customer behavior for stores that are open.
+2024-09-23 11:42:44,199 - INFO - Analyzing customer behavior for stores that are not open.
+2024-09-23 11:42:44,483 - INFO - Analyzing customer behavior by season for stores that are open.
+2024-09-23 11:42:45,081 - INFO - Plotting distribution of State Holidays.
+2024-09-23 11:42:45,290 - INFO - Plotting distribution of School Holidays.
+2024-09-23 11:42:45,431 - INFO - Plotting average sales on State Holidays vs Non-Holidays.
+2024-09-23 11:42:45,639 - INFO - Plotting average sales on School Holidays vs Non-Holidays.
+2024-09-23 11:42:45,967 - INFO - Plotting effect of promotions on monthly average sales.
+2024-09-23 11:42:46,310 - INFO - Analyzing store type performance over time.
+2024-09-23 11:42:46,766 - INFO - Plotting performance by store type and promotion over time.
+2024-09-23 11:42:47,089 - INFO - Plotting the relationship between number of customers and sales over time.
+2024-09-23 11:43:01,403 - INFO - Creating a heatmap for average sales by day of the week and month.
+2024-09-23 11:43:01,855 - INFO - Plotting daily sales growth rate.
+2024-09-23 11:43:02,262 - INFO - Analyzing the effect of assortment type on monthly average sales.
+2024-09-23 11:43:02,564 - INFO - Analyzing the effect of competition distance on sales.
+2024-09-23 11:43:02,826 - INFO - Analyzing stores open on all weekdays.
+2024-09-23 11:43:03,559 - INFO - Starting storesOpenWeekdayOpenWeekends function
+2024-09-23 11:43:03,787 - INFO - Filtered open stores: 844392 entries
+2024-09-23 11:43:03,975 - INFO - Number of stores open all weekdays: 1115
+2024-09-23 11:43:04,162 - INFO - Average weekend sales for stores open all weekdays: 2994.451143510152
+2024-09-23 11:43:04,164 - INFO - Average weekend sales for stores NOT open all weekdays: nan
+2024-09-23 11:43:04,318 - INFO - Completed storesOpenWeekdayOpenWeekends function
+2024-09-23 11:43:04,724 - INFO - Creating date features.
+2024-09-23 11:43:05,227 - INFO - Creating date features.
+2024-09-23 14:04:14,190 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:04:14,289 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:04:14,308 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:04:14,341 - INFO - Replacing missing values...
+2024-09-23 14:04:14,347 - INFO - Replacing missing values in column 'Id' with mean: 41088
+2024-09-23 14:04:14,349 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 14:04:14,351 - INFO - Replacing missing values in column 'DayOfWeek' with mean: 7
+2024-09-23 14:04:14,353 - INFO - Replacing missing values in column 'Open' with mean: 1.0
+2024-09-23 14:04:14,355 - INFO - Replacing missing values in column 'Promo' with mean: 1
+2024-09-23 14:04:14,356 - INFO - Replacing missing values in column 'SchoolHoliday' with mean: 1
+2024-09-23 14:04:14,361 - INFO - Replacing missing values in column 'Date' with mode: 2015-08-01
+2024-09-23 14:04:14,367 - INFO - Replacing missing values in column 'StateHoliday' with mode: 0
+2024-09-23 14:04:14,376 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:04:14,394 - INFO - Replacing missing values...
+2024-09-23 14:04:14,397 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 14:04:14,399 - INFO - Replacing missing values in column 'CompetitionDistance' with mean: 75860.0
+2024-09-23 14:04:14,401 - INFO - Replacing missing values in column 'CompetitionOpenSinceMonth' with mean: 12.0
+2024-09-23 14:04:14,403 - INFO - Replacing missing values in column 'CompetitionOpenSinceYear' with mean: 2015.0
+2024-09-23 14:04:14,405 - INFO - Replacing missing values in column 'Promo2' with mean: 1
+2024-09-23 14:04:14,407 - INFO - Replacing missing values in column 'Promo2SinceWeek' with mean: 50.0
+2024-09-23 14:04:14,409 - INFO - Replacing missing values in column 'Promo2SinceYear' with mean: 2015.0
+2024-09-23 14:04:14,411 - INFO - Replacing missing values in column 'StoreType' with mode: a
+2024-09-23 14:04:14,413 - INFO - Replacing missing values in column 'Assortment' with mode: a
+2024-09-23 14:04:14,416 - INFO - Replacing missing values in column 'PromoInterval' with mode: Jan,Apr,Jul,Oct
+2024-09-23 14:04:14,422 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:04:14,477 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:04:14,566 - INFO - Creating box plots for outlier detection...
+2024-09-23 14:04:17,605 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:04:17,626 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:04:17,651 - INFO - Creating box plots for outlier detection...
+2024-09-23 14:04:17,950 - INFO - Removing outliers using winsorization...
+2024-09-23 14:04:17,980 - INFO - Winsorizing column 'Sales' with lower bound: -2466.5 and upper bound: 14049.5
+2024-09-23 14:04:18,035 - INFO - Winsorizing column 'Customers' with lower bound: -243.0 and upper bound: 1485.0
+2024-09-23 14:04:18,053 - INFO - Removing outliers using winsorization...
+2024-09-23 14:04:18,057 - INFO - Winsorizing column 'CompetitionDistance' with lower bound: -8557.5 and upper bound: 16182.5
+2024-09-23 14:04:18,062 - INFO - Winsorizing column 'CompetitionOpenSinceYear' with lower bound: 1997.5 and upper bound: 2025.5
+2024-09-23 14:04:18,071 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:04:18,152 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:04:18,177 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:04:18,197 - INFO - Creating box plots for outlier detection...
+2024-09-23 14:04:21,172 - INFO - Creating box plots for outlier detection...
+2024-09-23 14:04:22,563 - INFO - Creating date features.
+2024-09-23 14:04:23,305 - INFO - Comparing Promo distribution between train and test datasets.
+2024-09-23 14:04:23,329 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 14:04:23,337 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 14:04:23,361 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 14:04:23,366 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 14:04:23,492 - INFO - Categorizing each day based on holiday type.
+2024-09-23 14:04:43,848 - INFO - Calculating average sales during different periods.
+2024-09-23 14:04:44,035 - INFO - Plotting the effect of holidays on sales.
+2024-09-23 14:04:44,401 - INFO - Plotting sales over time by different timeframes.
+2024-09-23 14:04:45,587 - INFO - Decomposing sales seasonality.
+2024-09-23 14:04:46,735 - INFO - Calculating average sales by day of the week.
+2024-09-23 14:04:47,120 - INFO - Plotting monthly sales: Open vs Not Open.
+2024-09-23 14:04:47,332 - INFO - Analyzing customer behavior for stores that are open.
+2024-09-23 14:04:47,739 - INFO - Analyzing customer behavior for stores that are not open.
+2024-09-23 14:04:48,001 - INFO - Analyzing customer behavior by season for stores that are open.
+2024-09-23 14:04:48,582 - INFO - Plotting distribution of State Holidays.
+2024-09-23 14:04:48,791 - INFO - Plotting distribution of School Holidays.
+2024-09-23 14:04:48,922 - INFO - Plotting average sales on State Holidays vs Non-Holidays.
+2024-09-23 14:04:49,133 - INFO - Plotting average sales on School Holidays vs Non-Holidays.
+2024-09-23 14:04:49,468 - INFO - Plotting effect of promotions on monthly average sales.
+2024-09-23 14:04:49,743 - INFO - Analyzing store type performance over time.
+2024-09-23 14:04:50,141 - INFO - Plotting performance by store type and promotion over time.
+2024-09-23 14:04:50,417 - INFO - Plotting the relationship between number of customers and sales over time.
+2024-09-23 14:05:04,457 - INFO - Creating a heatmap for average sales by day of the week and month.
+2024-09-23 14:05:04,908 - INFO - Plotting daily sales growth rate.
+2024-09-23 14:05:05,382 - INFO - Analyzing the effect of assortment type on monthly average sales.
+2024-09-23 14:05:05,647 - INFO - Analyzing the effect of competition distance on sales.
+2024-09-23 14:05:05,897 - INFO - Analyzing stores open on all weekdays.
+2024-09-23 14:05:06,558 - INFO - Starting storesOpenWeekdayOpenWeekends function
+2024-09-23 14:05:06,792 - INFO - Filtered open stores: 844392 entries
+2024-09-23 14:05:06,981 - INFO - Number of stores open all weekdays: 1115
+2024-09-23 14:05:07,151 - INFO - Average weekend sales for stores open all weekdays: 2994.451143510152
+2024-09-23 14:05:07,152 - INFO - Average weekend sales for stores NOT open all weekdays: nan
+2024-09-23 14:05:07,294 - INFO - Completed storesOpenWeekdayOpenWeekends function
+2024-09-23 14:05:07,778 - INFO - Creating date features.
+2024-09-23 14:05:08,280 - INFO - Creating date features.
+2024-09-23 14:21:58,614 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:21:58,706 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:21:58,722 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:21:58,752 - INFO - Replacing missing values...
+2024-09-23 14:21:58,754 - INFO - Replacing missing values in column 'Id' with mean: 41088
+2024-09-23 14:21:58,757 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 14:21:58,758 - INFO - Replacing missing values in column 'DayOfWeek' with mean: 7
+2024-09-23 14:21:58,761 - INFO - Replacing missing values in column 'Open' with mean: 1.0
+2024-09-23 14:21:58,763 - INFO - Replacing missing values in column 'Promo' with mean: 1
+2024-09-23 14:21:58,764 - INFO - Replacing missing values in column 'SchoolHoliday' with mean: 1
+2024-09-23 14:21:58,768 - INFO - Replacing missing values in column 'Date' with mode: 2015-08-01
+2024-09-23 14:21:58,773 - INFO - Replacing missing values in column 'StateHoliday' with mode: 0
+2024-09-23 14:21:58,782 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:21:58,798 - INFO - Replacing missing values...
+2024-09-23 14:21:58,800 - INFO - Replacing missing values in column 'Store' with mean: 1115
+2024-09-23 14:21:58,801 - INFO - Replacing missing values in column 'CompetitionDistance' with mean: 75860.0
+2024-09-23 14:21:58,802 - INFO - Replacing missing values in column 'CompetitionOpenSinceMonth' with mean: 12.0
+2024-09-23 14:21:58,805 - INFO - Replacing missing values in column 'CompetitionOpenSinceYear' with mean: 2015.0
+2024-09-23 14:21:58,806 - INFO - Replacing missing values in column 'Promo2' with mean: 1
+2024-09-23 14:21:58,808 - INFO - Replacing missing values in column 'Promo2SinceWeek' with mean: 50.0
+2024-09-23 14:21:58,809 - INFO - Replacing missing values in column 'Promo2SinceYear' with mean: 2015.0
+2024-09-23 14:21:58,811 - INFO - Replacing missing values in column 'StoreType' with mode: a
+2024-09-23 14:21:58,812 - INFO - Replacing missing values in column 'Assortment' with mode: a
+2024-09-23 14:21:58,814 - INFO - Replacing missing values in column 'PromoInterval' with mode: Jan,Apr,Jul,Oct
+2024-09-23 14:21:58,820 - INFO - Finding missing values in DataFrame...
+2024-09-23 14:21:58,871 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:21:58,943 - INFO - Creating box plots for outlier detection...
+2024-09-23 14:22:02,201 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:22:02,228 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:22:02,252 - INFO - Creating box plots for outlier detection...
+2024-09-23 14:22:02,543 - INFO - Removing outliers using winsorization...
+2024-09-23 14:22:02,567 - INFO - Winsorizing column 'Sales' with lower bound: -2466.5 and upper bound: 14049.5
+2024-09-23 14:22:02,625 - INFO - Winsorizing column 'Customers' with lower bound: -243.0 and upper bound: 1485.0
+2024-09-23 14:22:02,644 - INFO - Removing outliers using winsorization...
+2024-09-23 14:22:02,648 - INFO - Winsorizing column 'CompetitionDistance' with lower bound: -8557.5 and upper bound: 16182.5
+2024-09-23 14:22:02,653 - INFO - Winsorizing column 'CompetitionOpenSinceYear' with lower bound: 1997.5 and upper bound: 2025.5
+2024-09-23 14:22:02,664 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:22:02,743 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:22:02,764 - INFO - Calculating outlier summary for numerical columns...
+2024-09-23 14:22:02,782 - INFO - Creating box plots for outlier detection...
+2024-09-23 14:22:05,821 - INFO - Creating box plots for outlier detection...
+2024-09-23 14:22:07,291 - INFO - Creating date features.
+2024-09-23 14:22:08,089 - INFO - Comparing Promo distribution between train and test datasets.
+2024-09-23 14:22:08,114 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 14:22:08,119 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 14:22:08,144 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 14:22:08,150 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-09-23 14:22:08,274 - INFO - Categorizing each day based on holiday type.
+2024-09-23 14:22:28,387 - INFO - Calculating average sales during different periods.
+2024-09-23 14:22:28,567 - INFO - Plotting the effect of holidays on sales.
+2024-09-23 14:22:28,978 - INFO - Plotting sales over time by different timeframes.
+2024-09-23 14:22:30,224 - INFO - Decomposing sales seasonality.
+2024-09-23 14:22:31,335 - INFO - Calculating average sales by day of the week.
+2024-09-23 14:22:31,730 - INFO - Plotting monthly sales: Open vs Not Open.
+2024-09-23 14:22:31,972 - INFO - Analyzing customer behavior for stores that are open.
+2024-09-23 14:22:32,392 - INFO - Analyzing customer behavior for stores that are not open.
+2024-09-23 14:22:32,650 - INFO - Analyzing customer behavior by season for stores that are open.
+2024-09-23 14:22:33,238 - INFO - Plotting distribution of State Holidays.
+2024-09-23 14:22:33,425 - INFO - Plotting distribution of School Holidays.
+2024-09-23 14:22:33,557 - INFO - Plotting average sales on State Holidays vs Non-Holidays.
+2024-09-23 14:22:33,746 - INFO - Plotting average sales on School Holidays vs Non-Holidays.
+2024-09-23 14:22:34,025 - INFO - Plotting effect of promotions on monthly average sales.
+2024-09-23 14:22:34,297 - INFO - Analyzing store type performance over time.
+2024-09-23 14:22:34,780 - INFO - Plotting performance by store type and promotion over time.
+2024-09-23 14:22:35,115 - INFO - Plotting the relationship between number of customers and sales over time.
+2024-09-23 14:22:49,433 - INFO - Creating a heatmap for average sales by day of the week and month.
+2024-09-23 14:22:49,836 - INFO - Plotting daily sales growth rate.
+2024-09-23 14:22:50,281 - INFO - Analyzing the effect of assortment type on monthly average sales.
+2024-09-23 14:22:50,537 - INFO - Analyzing the effect of competition distance on sales.
+2024-09-23 14:22:50,780 - INFO - Analyzing stores open on all weekdays.
+2024-09-23 14:22:51,561 - INFO - Starting storesOpenWeekdayOpenWeekends function
+2024-09-23 14:22:51,760 - INFO - Filtered open stores: 844392 entries
+2024-09-23 14:22:51,953 - INFO - Number of stores open all weekdays: 1115
+2024-09-23 14:22:52,130 - INFO - Average weekend sales for stores open all weekdays: 2994.451143510152
+2024-09-23 14:22:52,131 - INFO - Average weekend sales for stores NOT open all weekdays: nan
+2024-09-23 14:22:52,270 - INFO - Completed storesOpenWeekdayOpenWeekends function
+2024-09-23 14:22:52,766 - INFO - Creating date features.
+2024-09-23 14:22:53,327 - INFO - Creating date features.

@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from statsmodels.tsa.seasonal import seasonal_decompose
 from scripts.logging import logger
+import numpy as np
 
 def replace_char_state_holiday(char):
     # logger.info(f"Replacing char '{char}' for state holiday.")
@@ -460,3 +461,41 @@ def storesOpenWeekdayOpenWeekends(merged_train_data_store):
 
     logger.info('Completed storesOpenWeekdayOpenWeekends function')
 
+def splitHolidayTypeToLists(data):
+    data['Date'] = pd.to_datetime(data['Date'])
+    # Split holiday types 'a', 'b', 'c' into separate lists
+    holiday_a_dates = np.sort(data[data['StateHoliday'] == 'a']['Date'].unique())
+    holiday_b_dates = np.sort(data[data['StateHoliday'] == 'b']['Date'].unique())
+    holiday_c_dates = np.sort(data[data['StateHoliday'] == 'c']['Date'].unique())
+    return holiday_a_dates, holiday_b_dates, holiday_c_dates
+
+def days_to_nearest_holiday(row_date, holidays):
+    if holidays.size == 0: 
+        return 0
+    days_to_holidays = [(holiday - row_date).days for holiday in holidays]
+    result = min(days_to_holidays, key=abs)
+    if result<0:
+        return -1
+    else:
+        return result
+    
+def days_after_last_holiday(row_date, holidays):
+    past_holidays = [holiday for holiday in holidays if holiday < row_date]
+    if past_holidays:
+        last_holiday = max(past_holidays)
+        result =(row_date - last_holiday).days
+        if result<0:
+            return -1
+        else:
+            return result
+    else:
+        return 0 
+
+def assign_days_to_and_after_holiday(data,holiday_a_dates_train, holiday_b_dates_train, holiday_c_dates_train):
+    data['DaysTo_A_Holiday'] = data['Date'].apply(lambda x: days_to_nearest_holiday(x, holiday_a_dates_train))
+    data['DaysTo_B_Holiday'] = data['Date'].apply(lambda x: days_to_nearest_holiday(x, holiday_b_dates_train))
+    data['DaysTo_C_Holiday'] = data['Date'].apply(lambda x: days_to_nearest_holiday(x, holiday_c_dates_train))
+    data['DaysAfter_A_Holiday'] = data['Date'].apply(lambda x: days_after_last_holiday(x, holiday_a_dates_train))
+    data['DaysAfter_B_Holiday'] = data['Date'].apply(lambda x: days_after_last_holiday(x, holiday_b_dates_train))
+    data['DaysAfter_C_Holiday'] = data['Date'].apply(lambda x: days_after_last_holiday(x, holiday_c_dates_train))
+    return data
