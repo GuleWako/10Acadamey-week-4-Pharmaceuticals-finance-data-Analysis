@@ -4,6 +4,8 @@ import seaborn as sns
 from statsmodels.tsa.seasonal import seasonal_decompose
 from scripts.logging import logger
 import numpy as np
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
 
 def replace_char_state_holiday(char):
     # logger.info(f"Replacing char '{char}' for state holiday.")
@@ -34,6 +36,13 @@ def create_date_features(df):
     df['WeekOfYear'] = df['Date'].dt.isocalendar().week
     df['IsWeekend'] = df['DayOfWeek'].apply(lambda x: 1 if x >= 5 else 0)
     return df
+def month_period(day):
+    if day <= 10:
+        return 'beginning'
+    elif day <= 20:
+        return 'middle'
+    else:
+        return 'end'
 
 def distribution_promotions_in_both_datasets(merged_train_data_store,merged_test_data_store):
     logger.info("Comparing Promo distribution between train and test datasets.")
@@ -499,3 +508,69 @@ def assign_days_to_and_after_holiday(data,holiday_a_dates_train, holiday_b_dates
     data['DaysAfter_B_Holiday'] = data['Date'].apply(lambda x: days_after_last_holiday(x, holiday_b_dates_train))
     data['DaysAfter_C_Holiday'] = data['Date'].apply(lambda x: days_after_last_holiday(x, holiday_c_dates_train))
     return data
+
+
+def get_preprocessed_test_data(test_data):
+    # Columns for both train and test datasets
+    categorical_columns = ['StoreType', 'Assortment', 'StateHoliday', 'PromoInterval', 'MonthPeriod']
+    numeric_columns_test = ['Store', 'DayOfWeek', 'DaysTo_A_Holiday', 'SchoolHoliday',
+                            'DaysAfter_A_Holiday', 'DaysTo_B_Holiday', 'DaysAfter_B_Holiday',
+                            'DaysTo_C_Holiday', 'DaysAfter_C_Holiday', 'Open', 'Promo', 'Promo2',
+                            'Promo2SinceWeek', 'Promo2SinceYear', 'Year', 'Month', 'Day', 'WeekOfYear',
+                            'IsWeekend', 'CompetitionDistance', 'CompetitionOpenSinceMonth',
+                            'CompetitionOpenSinceYear']
+
+
+    # 1. One-hot encode categorical columns and scale numeric columns for training data
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', StandardScaler(), numeric_columns_test),  # Apply to both train and test (numeric columns excluding Sales for test)
+            ('cat', OneHotEncoder(handle_unknown='ignore'), categorical_columns)  # handle_unknown='ignore' avoids unseen categories issues
+        ]
+    )
+
+    test_data_preprocessed = preprocessor.fit_transform(test_data)
+
+    encoded_cat_columns = preprocessor.named_transformers_['cat'].get_feature_names_out(categorical_columns)
+
+    test_columns = numeric_columns_test + list(encoded_cat_columns)
+
+
+    test_data_preprocessed_df = pd.DataFrame(test_data_preprocessed, columns=test_columns)
+    return test_data_preprocessed_df
+
+def get_preprocessed_train_data(train_data):
+    # Columns for both train and test datasets
+    categorical_columns = ['StoreType', 'Assortment', 'StateHoliday', 'PromoInterval', 'MonthPeriod']
+    numeric_columns_train = ['Sales', 'Store', 'DayOfWeek', 'DaysTo_A_Holiday', 'SchoolHoliday',
+                            'DaysAfter_A_Holiday', 'DaysTo_B_Holiday', 'DaysAfter_B_Holiday',
+                            'DaysTo_C_Holiday', 'DaysAfter_C_Holiday', 'Open', 'Promo', 'Promo2',
+                            'Promo2SinceWeek', 'Promo2SinceYear', 'Year', 'Month', 'Day', 'WeekOfYear',
+                            'IsWeekend', 'CompetitionDistance', 'CompetitionOpenSinceMonth',
+                            'CompetitionOpenSinceYear']
+
+    # numeric_columns_test = [col for col in numeric_columns_train if col != 'Sales']  # Exclude 'Sales'
+
+    # 1. One-hot encode categorical columns and scale numeric columns for training data
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', StandardScaler(), numeric_columns_train),  # Apply to both train and test (numeric columns excluding Sales for test)
+            ('cat', OneHotEncoder(handle_unknown='ignore'), categorical_columns)  # handle_unknown='ignore' avoids unseen categories issues
+        ]
+    )
+
+    # 2. Fit the preprocessor on the training data
+    train_data_preprocessed = preprocessor.fit_transform(train_data)
+
+
+    # 4. Recreate DataFrames for both train and test data
+    # Get column names for the one-hot encoded categorical columns
+    encoded_cat_columns = preprocessor.named_transformers_['cat'].get_feature_names_out(categorical_columns)
+
+    # Combine numeric and one-hot encoded column names
+    train_columns = numeric_columns_train + list(encoded_cat_columns)
+
+
+    # Create new DataFrames with the transformed data and appropriate column names
+    train_data_preprocessed_df = pd.DataFrame(train_data_preprocessed, columns=train_columns)
+    return train_data_preprocessed_df
