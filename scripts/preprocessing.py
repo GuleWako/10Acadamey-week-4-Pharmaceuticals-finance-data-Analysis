@@ -80,7 +80,7 @@ def replace_missing_values(data):
 
     # Replace missing values in numeric columns with the mean
     for column in numeric_columns:
-        column_mean = data[column].mean()
+        column_mean = data[column].max()
         logger.info(f"Replacing missing values in column '{column}' with mean: {column_mean}")
         data[column] = data[column].fillna(column_mean)
 
