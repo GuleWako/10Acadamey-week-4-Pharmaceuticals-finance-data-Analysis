@@ -36,7 +36,7 @@ def prepare_lstm_data(data, target_col, window_size=60):
     X, y = np.array(X), np.array(y)
     X = np.reshape(X, (X.shape[0], X.shape[1], 1))  # Reshape to LSTM expected input
 
-    return X, y, scaler
+    return X, y,scaler
 
 
 # Training the LSTM model
@@ -45,8 +45,6 @@ def train_lstm_model(X_train, y_train, input_shape):
     Train the LSTM model using training data and validate on the validation set.
     :param X_train: Features for training.
     :param y_train: Target for training.
-    :param X_val: Features for validation.
-    :param y_val: Target for validation.
     :param input_shape: Shape of the input data for the LSTM model.
     :return: Trained LSTM model.
     """

@@ -15,7 +15,7 @@ from datetime import datetime
 # Model Building
 def build_ml_model():
     """
-    Build a Random Forest Regressor with 100 estimators and random_state for reproducibility.
+    Build a Random Forest Regressor with 50 estimators and random_state for reproducibility.
     """
     model = RandomForestRegressor(n_estimators=50, max_depth=2, n_jobs=-1)
     return model
@@ -61,7 +61,7 @@ def post_prediction_feature_importance(model, train_data):
     feature_importances = model_rf.feature_importances_
 
     # Sorting feature importances for visualization
-    sorted_idx = np.argsort(feature_importances)
+    sorted_idx = np.argsort(feature_importances)[::-1]
     plt.figure(figsize=(10, 8))
     plt.barh(np.array(train_data.columns)[sorted_idx], feature_importances[sorted_idx], color='g')
     plt.xlabel("Random Forest Feature Importance")
@@ -70,7 +70,6 @@ def post_prediction_feature_importance(model, train_data):
     
 def post_prediction_confidence_interval(model, train_data):
     # Confidence interval estimation
-    # For simplicity, we can look at the variance across trees in the forest
 
     model_rf = model.named_steps['model']
 
